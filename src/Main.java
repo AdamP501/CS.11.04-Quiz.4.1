@@ -65,7 +65,7 @@ public class Main {
                     noDelimited = noDelimited + upper.toUpperCase();
                 }
             }
-            else if (i < str.length()) {
+            else{
                 noDelimited = noDelimited + str.charAt(i);
             }
         }

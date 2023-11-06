@@ -1,8 +1,8 @@
 public class Main {
 
     /** 1. Write a method called numberOfVowels that returns the number of vowels in a string.
-     Consider a, e, i, o, u as vowels. **/
-    
+     Consider a, e, i, o, u as vowels. ***
+
 
     /** 2. Write a method called notDivisibleBy235 that finds the number of natural numbers not exceeding N
      and not divisible by any of the numbers [2, 3, 5].
@@ -24,6 +24,54 @@ public class Main {
      "the-stealth-warrior" gets converted to "theStealthWarrior"
      "The_Stealth_Warrior" gets converted to "TheStealthWarrior"
      "The_Stealth-Warrior" gets converted to "TheStealthWarrior" **/
+
+    public static int numberOfVowels(String str)
+    {
+        int count = 0;
+        for (int i = 0; i < str.length(); i++)
+        {
+            if (str.charAt(i) == 'a'||str.charAt(i) == 'e' || str.charAt(i) == 'i' || str.charAt(i) == 'o' || str.charAt(i) == 'u')
+            {
+                count+=1;
+            }
+        }
+        return count;
+    }
+
+    public static int notDivisibleBy235 (int N)
+    {
+        int count = 0;
+        for (int i = 0; i <= N; i++)
+        {
+            if (!(i%2 == 0 || i%3 == 0 || i%5 == 0))
+            {
+                count+=1;
+            }
+        }
+        return count;
+    }
+
+    public static String camelCaseMe(String str)
+    {
+        String noDelimited = "";
+        for(int i = 0; i < str.length(); i++)
+        {
+            if (str.charAt(i) == '-' || str.charAt(i) == '_')
+            {
+                i+=1;
+                if (i < str.length())
+                {
+                    String upper = str.substring(i,i+1);
+                    noDelimited = noDelimited + upper.toUpperCase();
+                }
+            }
+            else if (i < str.length()) {
+                noDelimited = noDelimited + str.charAt(i);
+            }
+        }
+
+        return noDelimited;
+    }
 
 
 }
